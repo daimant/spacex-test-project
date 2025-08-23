@@ -24,12 +24,21 @@
     padding-top: 26px;
     border-inline: 1px solid #2B2A2E;
     height: 100px;
+    position: relative;
+    
+    .edgeCorner {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+    }
     
     a {
       display: flex;
       align-items: center;
       text-decoration: none;
       transition: transform 0.3s ease;
+      position: relative;
+      z-index: 1;
       
       &:hover {
         transform: scale(1.05);

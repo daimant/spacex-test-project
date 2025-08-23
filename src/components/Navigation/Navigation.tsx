@@ -38,6 +38,38 @@ export default function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
+            <div className={styles.edgeCorner} style={{ top: 0, left: 0 }}>
+              <Image
+                src="/assets/edge1.png"
+                alt="Edge Corner 1"
+                width={7}
+                height={7}
+              />
+            </div>
+            <div className={styles.edgeCorner} style={{ top: 0, right: 0 }}>
+              <Image
+                src="/assets/edge2.png"
+                alt="Edge Corner 2"
+                width={7}
+                height={7}
+              />
+            </div>
+            <div className={styles.edgeCorner} style={{ bottom: 0, left: 0 }}>
+              <Image
+                src="/assets/edge3.png"
+                alt="Edge Corner 3"
+                width={7}
+                height={7}
+              />
+            </div>
+            <div className={styles.edgeCorner} style={{ bottom: 0, right: 0 }}>
+              <Image
+                src="/assets/edge4.png"
+                alt="Edge Corner 4"
+                width={7}
+                height={7}
+              />
+            </div>
             <Link href="/">
               <Image
                 src="/assets/logo.png"

@@ -63,6 +63,11 @@
     }
   }
   
+  .buttonContainer {
+    display: flex;
+    align-items: center;
+  }
+  
   .ctaButton {
     padding: 11px 24px;
     font-size: 14px;
@@ -92,5 +97,10 @@
       padding: 10px 20px;
       font-size: 1rem;
     }
+  }
+  
+  .lineImage {
+    display: flex;
+    align-items: center;
   }
 }
