@@ -1,15 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 import styles from './Hero.module.scss'
 import { HeroContent } from './types'
 
 const defaultContent: HeroContent = {
   title: 'ПУТЕШЕСТВИЯ',
   subtitle: 'на красную планету',
-  buttonText: 'Начать путешествие',
-  logoAlt: 'SpaceX Logo'
+  buttonText: 'Начать путешествие'
 }
 
 export default function Hero() {
@@ -23,26 +21,11 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.div 
-              className={styles.logo}
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-            >
-              <Image
-                src="/assets/logo.png"
-                alt={defaultContent.logoAlt}
-                width={200}
-                height={80}
-                priority
-              />
-            </motion.div>
-            
             <motion.h1 
               className={styles.title}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
             >
               {defaultContent.title}
             </motion.h1>
@@ -51,7 +34,7 @@ export default function Hero() {
               className={styles.subtitle}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
               {defaultContent.subtitle}
             </motion.p>
@@ -60,7 +43,7 @@ export default function Hero() {
               className={styles.ctaButton}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

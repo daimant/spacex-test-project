@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import styles from './Navigation.module.scss'
 import { MenuItem, NavigationState } from './types'
@@ -37,7 +38,15 @@ export default function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <Link href="/">SPACEX</Link>
+            <Link href="/">
+              <Image
+                src="/assets/logo.png"
+                alt="SpaceX Logo"
+                width={120}
+                height={48}
+                priority
+              />
+            </Link>
           </motion.div>
 
           <div className={styles.desktopMenu}>
