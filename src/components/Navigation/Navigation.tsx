@@ -3,11 +3,13 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import styles from './Navigation.module.scss'
 import { MenuItem, NavigationState } from './types'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState<NavigationState['isMenuOpen']>(false)
+  const pathname = usePathname()
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -20,7 +22,10 @@ export default function Navigation() {
     { name: 'Гарантии', href: '/guarantees', key: 'guarantees' },
     { name: 'О компании', href: '/about', key: 'about' },
     { name: 'Контакты', href: '/contacts', key: 'contacts' }
-  ]
+  ].map(item => ({
+    ...item,
+    isActive: pathname === item.href
+  }))
 
   return (
     <nav className={styles.navigation}>
@@ -44,7 +49,10 @@ export default function Navigation() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ y: -2 }}
               >
-                <Link href={item.href} className={styles.menuItem}>
+                <Link 
+                  href={item.href} 
+                  className={`${styles.menuItem} ${item.isActive ? styles.active : ''}`}
+                >
                   {item.name}
                 </Link>
               </motion.div>
@@ -85,7 +93,7 @@ export default function Navigation() {
                 >
                   <Link
                     href={item.href}
-                    className={styles.mobileMenuItem}
+                    className={`${styles.mobileMenuItem} ${item.isActive ? styles.active : ''}`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.name}
