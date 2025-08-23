@@ -5,10 +5,20 @@
   position: relative;
   z-index: 2;
   
+  :global(.container) {
+    margin: 0;
+    padding-left: 5%;
+  }
+  
   &Content {
-    text-align: center;
+    text-align: left;
     max-width: 800px;
-    margin: 0 auto;
+    
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
   
   .title {
@@ -35,11 +45,11 @@
     margin-bottom: 40px;
     line-height: 1.6;
     max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
     
     @media (max-width: 768px) {
       font-size: 1.3rem;
+      margin-left: auto;
+      margin-right: auto;
     }
     
     @media (max-width: 480px) {

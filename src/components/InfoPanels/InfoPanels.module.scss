@@ -1,17 +1,17 @@
 .infoPanels {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
+  align-items: center;
   position: absolute;
   top: 50%;
-  left: 0;
-  right: 0;
+  right: 5%;
   transform: translateY(-50%);
   z-index: 5;
   pointer-events: none;
   
   @media (max-width: 768px) {
-    flex-direction: column;
     position: static;
+    justify-content: center;
     transform: none;
     margin-top: 40px;
     pointer-events: auto;
@@ -21,12 +21,14 @@
 .panel {
   text-align: center;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.7);
+  background: transparent;
   border-radius: 10px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 69, 0, 0.3);
+  backdrop-filter: none;
+  border: none;
   transition: all 0.3s ease;
   pointer-events: auto;
+  position: relative;
+  overflow: hidden;
   
   @media (max-width: 768px) {
     margin-bottom: 20px;
@@ -36,19 +38,11 @@
     margin-right: auto;
   }
   
-  .text {
+  .label {
     display: block;
     font-size: 1.2rem;
     color: #ffffff;
-    margin-bottom: 5px;
     font-weight: 500;
-  }
-  
-  .subtext {
-    display: block;
-    font-size: 0.9rem;
-    color: #cccccc;
-    margin-bottom: 10px;
   }
   
   .value {
@@ -57,51 +51,54 @@
     color: #ff4500;
     font-weight: 700;
     text-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+    margin-bottom: 10px;
   }
   
   &:hover {
-    background: rgba(0, 0, 0, 0.9);
-    border-color: rgba(255, 69, 0, 0.8);
-    box-shadow: 0 0 20px rgba(255, 69, 0, 0.3);
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    
+    &::after {
+      opacity: 0;
+    }
+  }
+  
+  &::after {
+    display: none;
+  }
+}
+
+.panelsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 15px;
+  width: 300px;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 400px;
+    gap: 10px;
   }
 }
 
 .left-top {
-  position: absolute;
-  left: 10%;
-  top: 20%;
-  
-  @media (max-width: 768px) {
-    position: static;
-  }
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .left-bottom {
-  position: absolute;
-  left: 10%;
-  bottom: 20%;
-  
-  @media (max-width: 768px) {
-    position: static;
-  }
+  grid-column: 1;
+  grid-row: 2;
 }
 
 .right-top {
-  position: absolute;
-  right: 10%;
-  top: 20%;
-  
-  @media (max-width: 768px) {
-    position: static;
-  }
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .right-bottom {
-  position: absolute;
-  right: 10%;
-  bottom: 20%;
-  
-  @media (max-width: 768px) {
-    position: static;
-  }
+  grid-column: 2;
+  grid-row: 2;
 }
