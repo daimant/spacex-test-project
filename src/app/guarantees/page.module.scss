@@ -1,0 +1,232 @@
+.guaranteesPage {
+  min-height: 100vh;
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  position: relative;
+  z-index: 2;
+  
+  .pageHeader {
+    text-align: center;
+    margin-bottom: 80px;
+    
+    h1 {
+      font-size: 4rem;
+      color: #ffffff;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      
+      @media (max-width: 768px) {
+        font-size: 3rem;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 2.5rem;
+      }
+    }
+    
+    p {
+      font-size: 1.3rem;
+      color: #e0e0e0;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      
+      @media (max-width: 768px) {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  
+  .guaranteesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+  
+  .guaranteeCard {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 69, 0, 0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 69, 0, 0.8);
+      box-shadow: 0 10px 30px rgba(255, 69, 0, 0.2);
+    }
+    
+    .guaranteeHeader {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      gap: 20px;
+      
+      .icon {
+        font-size: 3rem;
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #ff4500, #ff6347);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 20px rgba(255, 69, 0, 0.3);
+      }
+      
+      .titleSection {
+        flex: 1;
+        
+        h3 {
+          font-size: 1.8rem;
+          color: #ffffff;
+          margin: 0 0 10px 0;
+          font-weight: 600;
+        }
+        
+        .percentage {
+          font-size: 1.5rem;
+          color: #ff4500;
+          font-weight: 700;
+          text-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+        }
+      }
+    }
+    
+    .description {
+      color: #e0e0e0;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      font-size: 1.1rem;
+    }
+    
+    .detailsList {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 25px;
+      
+      li {
+        color: #cccccc;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        padding-left: 25px;
+        
+        &:before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          top: 8px;
+          color: #ff4500;
+          font-weight: bold;
+        }
+        
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+    
+    .guaranteeFooter {
+      text-align: center;
+      
+      .learnMoreButton {
+        padding: 12px 24px;
+        background: transparent;
+        border: 2px solid #ff4500;
+        color: #ff4500;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        
+        &:hover {
+          background: #ff4500;
+          color: #ffffff;
+          transform: translateY(-2px);
+          box-shadow: 0 5px 15px rgba(255, 69, 0, 0.4);
+        }
+      }
+    }
+  }
+  
+  .commitmentSection {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 50px;
+    border: 1px solid rgba(255, 69, 0, 0.3);
+    
+    h2 {
+      font-size: 2.5rem;
+      color: #ff4500;
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+    
+    .commitmentContent {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      
+      .commitmentText {
+        p {
+          color: #e0e0e0;
+          line-height: 1.8;
+          margin-bottom: 20px;
+          font-size: 1.1rem;
+          
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      
+      .commitmentStats {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        
+        .stat {
+          text-align: center;
+          padding: 20px;
+          background: rgba(255, 69, 0, 0.1);
+          border-radius: 15px;
+          border: 1px solid rgba(255, 69, 0, 0.3);
+          
+          .statNumber {
+            display: block;
+            font-size: 3rem;
+            color: #ff4500;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px rgba(255, 69, 0, 0.5);
+          }
+          
+          .statLabel {
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+}

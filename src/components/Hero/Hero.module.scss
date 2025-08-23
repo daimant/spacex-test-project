@@ -1,0 +1,143 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+
+  :global(.container) {
+    margin: 0;
+    padding-left: 5vw;
+
+    @media (max-width: 768px) {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &Content {
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  .titleContainer {
+    background: linear-gradient(to right, #ffffff, #FF552C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    width: fit-content;
+  }
+
+  .title {
+    font-size: 58px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: none;
+    letter-spacing: 2px;
+
+    @media (max-width: 768px) {
+      font-size: 3rem;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .subtitle {
+    font-size: 25px;
+    margin-bottom: 87px;
+    line-height: 1.6;
+    max-width: 600px;
+
+    @media (max-width: 768px) {
+      font-size: 1.3rem;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 1.1rem;
+    }
+  }
+
+  .buttonContainer {
+    @media (min-width: 768px) {
+      width: 50vw;
+      gap: 20px;
+      margin-left: -5vw;
+      display: flex;
+      position: relative;
+      align-items: center;
+    }
+  }
+
+  .buttonWrapper {
+    position: relative;
+    display: inline-block;
+
+    @media (min-width: 768px) {
+      margin-left: 5vw;
+    }
+
+    .edgeCorner {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+    }
+  }
+
+  .ctaButton {
+    padding: 11px 24px;
+    font-size: 14px;
+    background: transparent;
+    border: 1px solid transparent;
+    background: linear-gradient(#0D0E16, #0D0E16) padding-box,
+    linear-gradient(135deg, #001939 0%, #01589A 25%, #01589A 75%, #001939 100%) border-box;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 0;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+
+    &:hover {
+      box-shadow: 0 0 20px rgba(1, 88, 154, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      padding: 12px 24px;
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 480px) {
+      padding: 10px 20px;
+      font-size: 1rem;
+    }
+  }
+
+  .lineImage {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 2vh;
+    width: calc(100% - 5vw - 236px);
+
+    img {
+      width: 100%;
+      height: 10vh;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+}
