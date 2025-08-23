@@ -42,8 +42,8 @@ export default function Navigation() {
               <Image
                 src="/assets/logo.png"
                 alt="SpaceX Logo"
-                width={120}
-                height={48}
+                width={274}
+                height={34}
                 priority
               />
             </Link>

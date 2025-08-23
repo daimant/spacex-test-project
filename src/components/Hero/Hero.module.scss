@@ -22,12 +22,15 @@
   }
   
   .title {
-    font-size: 4.5rem;
+    font-size: 58px;
     font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 20px;
+    background: linear-gradient(to right, #ffffff, #FF592D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
     line-height: 1.2;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
     letter-spacing: 2px;
     
     @media (max-width: 768px) {
@@ -40,8 +43,11 @@
   }
   
   .subtitle {
-    font-size: 1.5rem;
-    color: #e0e0e0;
+    font-size: 25px;
+    background: linear-gradient(to right, #ffffff, #FF592D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 40px;
     line-height: 1.6;
     max-width: 600px;
@@ -58,22 +64,23 @@
   }
   
   .ctaButton {
-    padding: 15px 30px;
-    font-size: 1.2rem;
+    padding: 11px 24px;
+    font-size: 14px;
     background: transparent;
-    border: 2px solid #ff4500;
-    color: #ff4500;
+    border: 2px solid;
+    border-image: linear-gradient(to right, #01589A, #01589A) 1;
+    color: #ffffff;
     cursor: pointer;
-    border-radius: 8px;
+    border-radius: 0;
     font-weight: 600;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
     
     &:hover {
-      background: #ff4500;
+      background: #01589A;
       color: #ffffff;
-      box-shadow: 0 0 20px rgba(255, 69, 0, 0.5);
+      box-shadow: 0 0 20px rgba(1, 88, 154, 0.5);
     }
     
     @media (max-width: 768px) {

@@ -3,18 +3,28 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
   z-index: 1000;
-  padding: 15px 0;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #2B2A2E;
   
   .navContent {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    gap: 173px;
   }
   
   .logo {
+    padding-inline: 25px 15px;
+    padding-top: 26px;
+    border-inline: 1px solid #2B2A2E;
+    height: 100px;
+    
     a {
       display: flex;
       align-items: center;
@@ -26,6 +36,8 @@
       }
       
       img {
+        width: 274px;
+        height: 34px;
         max-width: 100%;
         height: auto;
       }
@@ -34,7 +46,7 @@
   
   .desktopMenu {
     display: flex;
-    gap: 30px;
+    gap: 24px;
     
     @media (max-width: 768px) {
       display: none;
@@ -45,11 +57,16 @@
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
+    font-size: 16px;
     transition: all 0.3s ease;
     position: relative;
     
     &:hover {
-      color: #ff4500;
+      color: #b1b1b1;
+    }
+    
+    &:active {
+      color: #585858;
     }
     
     &::after {
@@ -59,7 +76,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #ff4500;
+      background: #b1b1b1;
       transition: width 0.3s ease;
     }
     
@@ -68,7 +85,7 @@
     }
     
     &.active {
-      color: #ff4500;
+      color: #b1b1b1;
       
       &::after {
         width: 100%;
@@ -143,14 +160,14 @@
     }
     
     &:hover {
-      background: rgba(255, 69, 0, 0.1);
-      color: #ff4500;
+      background: rgba(177, 177, 177, 0.1);
+      color: #b1b1b1;
     }
     
     &.active {
-      background: rgba(255, 69, 0, 0.2);
-      color: #ff4500;
-      border-left: 3px solid #ff4500;
+      background: rgba(177, 177, 177, 0.2);
+      color: #b1b1b1;
+      border-left: 3px solid #b1b1b1;
     }
   }
 }
