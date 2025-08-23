@@ -2,9 +2,10 @@
 
 import { motion } from 'framer-motion'
 import styles from './page.module.scss'
+import { Mission, MissionStatus } from './types'
 
 export default function FlightSchedule() {
-  const missions = [
+  const missions: Mission[] = [
     {
       id: 1,
       name: 'Starlink Group 6-45',
@@ -47,7 +48,7 @@ export default function FlightSchedule() {
     }
   ]
 
-  const getStatusColor = (status: string) => {
+  const getStatusColor = (status: MissionStatus) => {
     switch (status) {
       case 'Запланирован':
         return '#ff4500'

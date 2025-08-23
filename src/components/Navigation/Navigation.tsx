@@ -4,15 +4,16 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import styles from './Navigation.module.scss'
+import { MenuItem, NavigationState } from './types'
 
 export default function Navigation() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState<NavigationState['isMenuOpen']>(false)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
 
-  const menuItems = [
+  const menuItems: MenuItem[] = [
     { name: 'Главная', href: '/', key: 'home' },
     { name: 'Технологии', href: '/technologies', key: 'technologies' },
     { name: 'График полетов', href: '/flight-schedule', key: 'flight-schedule' },
@@ -25,7 +26,7 @@ export default function Navigation() {
     <nav className={styles.navigation}>
       <div className="container">
         <div className={styles.navContent}>
-          <motion.div 
+          <motion.div
             className={styles.logo}
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}

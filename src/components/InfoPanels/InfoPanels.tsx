@@ -2,9 +2,10 @@
 
 import { motion } from 'framer-motion'
 import styles from './InfoPanels.module.scss'
+import { InfoPanel } from './types'
 
 export default function InfoPanels() {
-  const panels = [
+  const panels: InfoPanel[] = [
     {
       id: 'left-top',
       text: 'мы',

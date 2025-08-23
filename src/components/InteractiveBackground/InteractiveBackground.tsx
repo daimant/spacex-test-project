@@ -3,15 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import styles from './InteractiveBackground.module.scss'
-
-interface Particle {
-  x: number
-  y: number
-  vx: number
-  vy: number
-  size: number
-  opacity: number
-}
+import { Particle } from './types'
 
 export default function InteractiveBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)

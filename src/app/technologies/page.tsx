@@ -2,9 +2,10 @@
 
 import { motion } from 'framer-motion'
 import styles from './page.module.scss'
+import { Technology } from './types'
 
 export default function Technologies() {
-  const technologies = [
+  const technologies: Technology[] = [
     {
       id: 'falcon9',
       name: 'Falcon 9',

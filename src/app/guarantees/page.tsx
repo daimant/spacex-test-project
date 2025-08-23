@@ -2,9 +2,10 @@
 
 import { motion } from 'framer-motion'
 import styles from './page.module.scss'
+import { Guarantee } from './types'
 
 export default function Guarantees() {
-  const guarantees = [
+  const guarantees: Guarantee[] = [
     {
       id: 'safety',
       title: 'Безопасность',

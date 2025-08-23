@@ -3,10 +3,11 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import styles from './InteractiveElements.module.scss'
+import { InteractiveItem, InteractiveElementsState } from './types'
 
 export default function InteractiveElements() {
-  const [isVisible, setIsVisible] = useState(false)
-  const [activeElement, setActiveElement] = useState<string | null>(null)
+  const [isVisible, setIsVisible] = useState<InteractiveElementsState['isVisible']>(false)
+  const [activeElement, setActiveElement] = useState<InteractiveElementsState['activeElement']>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export default function InteractiveElements() {
     return () => observer.disconnect()
   }, [])
 
-  const interactiveItems = [
+  const interactiveItems: InteractiveItem[] = [
     {
       id: 'rocket',
       title: 'Rocket Launch',

@@ -2,11 +2,12 @@
 
 import { motion } from 'framer-motion'
 import styles from './Footer.module.scss'
+import { FooterSection, FooterSocialLink } from './types'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
-  const footerLinks = [
+  const footerLinks: FooterSection[] = [
     {
       title: 'Company',
       links: [

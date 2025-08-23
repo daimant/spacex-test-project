@@ -2,9 +2,10 @@
 
 import { motion } from 'framer-motion'
 import styles from './page.module.scss'
+import { Milestone, CompanyValue } from './types'
 
 export default function About() {
-  const milestones = [
+  const milestones: Milestone[] = [
     {
       year: '2002',
       title: 'Основание SpaceX',
@@ -47,7 +48,7 @@ export default function About() {
     }
   ]
 
-  const values = [
+  const values: CompanyValue[] = [
     {
       icon: '🚀',
       title: 'Инновации',

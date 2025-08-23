@@ -3,9 +3,10 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import styles from './page.module.scss'
+import { ContactFormData, ContactInfo, SocialLink } from './types'
 
 export default function Contacts() {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
     subject: '',
@@ -28,7 +29,7 @@ export default function Contacts() {
     setFormData({ name: '', email: '', subject: '', message: '' })
   }
 
-  const contactInfo = [
+  const contactInfo: ContactInfo[] = [
     {
       icon: '📍',
       title: 'Адрес',
@@ -51,7 +52,7 @@ export default function Contacts() {
     }
   ]
 
-  const socialLinks = [
+  const socialLinks: SocialLink[] = [
     { name: 'Twitter', icon: '𝕏', url: 'https://twitter.com/spacex' },
     { name: 'Instagram', icon: '📷', url: 'https://instagram.com/spacex' },
     { name: 'YouTube', icon: '▶️', url: 'https://youtube.com/spacex' },

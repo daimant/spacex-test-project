@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import BitrixIntegration from '../BitrixIntegration/BitrixIntegration'
 import styles from './Hero.module.scss'
+import { HeroContent } from './types'
 
-const defaultContent = {
+const defaultContent: HeroContent = {
   title: 'ПУТЕШЕСТВИЯ',
   subtitle: 'на красную планету',
   buttonText: 'Начать путешествие',
@@ -15,11 +15,6 @@ const defaultContent = {
 export default function Hero() {
   return (
     <>
-      <BitrixIntegration 
-        contentId="hero-content"
-        defaultContent={defaultContent}
-      />
-      
       <section className={styles.hero}>
         <div className="container">
           <motion.div 
