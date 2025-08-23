@@ -6,8 +6,10 @@ export default function Home() {
   return (
     <main className="main">
       <InteractiveBackground />
-      <Hero />
-      <InfoPanels />
+      <div className="container">
+        <Hero />
+        <InfoPanels />
+      </div>
     </main>
   )
 }
