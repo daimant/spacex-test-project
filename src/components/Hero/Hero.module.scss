@@ -66,14 +66,27 @@
   .buttonContainer {
     display: flex;
     align-items: center;
+    gap: 20px;
+  }
+  
+  .buttonWrapper {
+    position: relative;
+    display: inline-block;
+    
+    .edgeCorner {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+    }
   }
   
   .ctaButton {
     padding: 11px 24px;
     font-size: 14px;
     background: transparent;
-    border: 2px solid;
-    border-image: linear-gradient(to right, #01589A, #01589A) 1;
+    border: 1px solid transparent;
+    background: linear-gradient(#0D0E16, #0D0E16) padding-box,
+                linear-gradient(135deg, #001939 0%, #01589A 25%, #01589A 75%, #001939 100%) border-box;
     color: #ffffff;
     cursor: pointer;
     border-radius: 0;
@@ -81,10 +94,10 @@
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
     
     &:hover {
-      background: #01589A;
-      color: #ffffff;
       box-shadow: 0 0 20px rgba(1, 88, 154, 0.5);
     }
     
