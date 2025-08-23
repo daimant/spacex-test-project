@@ -1,0 +1,139 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 15px 0;
+  
+  .navContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    a {
+      color: #ff4500;
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      transition: color 0.3s ease;
+      
+      &:hover {
+        color: #ff6347;
+      }
+    }
+  }
+  
+  .desktopMenu {
+    display: flex;
+    gap: 30px;
+    
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  
+  .menuItem {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &:hover {
+      color: #ff4500;
+    }
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #ff4500;
+      transition: width 0.3s ease;
+    }
+    
+    &:hover::after {
+      width: 100%;
+    }
+  }
+  
+  .mobileMenuButton {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+  
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    
+    span {
+      width: 25px;
+      height: 3px;
+      background: #ffffff;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+    
+    &.active {
+      span {
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        
+        &:nth-child(3) {
+          transform: rotate(-45deg) translate(6px, -6px);
+        }
+      }
+    }
+  }
+  
+  .mobileMenu {
+    display: none;
+    background: rgba(0, 0, 0, 0.95);
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+  
+  .mobileMenuItem {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease;
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    &:hover {
+      background: rgba(255, 69, 0, 0.1);
+      color: #ff4500;
+    }
+  }
+}

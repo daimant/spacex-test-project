@@ -1,0 +1,26 @@
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import Navigation from '@/components/Navigation/Navigation'
+import '@/styles/globals.scss'
+
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata: Metadata = {
+  title: 'SpaceX Test Project',
+  description: 'SpaceX landing page with interactive elements',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>
+        <Navigation />
+        {children}
+      </body>
+    </html>
+  )
+}

@@ -1,0 +1,127 @@
+.technologiesPage {
+  min-height: 100vh;
+  padding: 120px 0 80px;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  position: relative;
+  z-index: 2;
+  
+  .pageHeader {
+    text-align: center;
+    margin-bottom: 80px;
+    
+    h1 {
+      font-size: 4rem;
+      color: #ffffff;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      
+      @media (max-width: 768px) {
+        font-size: 3rem;
+      }
+      
+      @media (max-width: 480px) {
+        font-size: 2.5rem;
+      }
+    }
+    
+    p {
+      font-size: 1.3rem;
+      color: #e0e0e0;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+      
+      @media (max-width: 768px) {
+        font-size: 1.1rem;
+      }
+    }
+  }
+  
+  .technologiesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+  
+  .technologyCard {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 69, 0, 0.3);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 69, 0, 0.8);
+      box-shadow: 0 10px 30px rgba(255, 69, 0, 0.2);
+    }
+    
+    .techImage {
+      margin-bottom: 25px;
+      text-align: center;
+      
+      .placeholderImage {
+        width: 120px;
+        height: 120px;
+        background: linear-gradient(135deg, #ff4500, #ff6347);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        color: #ffffff;
+        font-weight: 700;
+        margin: 0 auto;
+        box-shadow: 0 0 20px rgba(255, 69, 0, 0.3);
+      }
+    }
+    
+    .techContent {
+      h3 {
+        font-size: 1.8rem;
+        color: #ff4500;
+        margin-bottom: 15px;
+        font-weight: 600;
+        text-align: center;
+      }
+      
+      p {
+        color: #e0e0e0;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      
+      ul {
+        list-style: none;
+        padding: 0;
+        
+        li {
+          color: #cccccc;
+          padding: 8px 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          position: relative;
+          padding-left: 25px;
+          
+          &:before {
+            content: '🚀';
+            position: absolute;
+            left: 0;
+            top: 8px;
+          }
+          
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+      }
+    }
+  }
+}
