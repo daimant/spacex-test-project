@@ -16,32 +16,34 @@ export default function Hero() {
     <>
       <section className={styles.hero}>
         <div className="container">
-          <motion.div 
+          <motion.div
             className={styles.heroContent}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.h1 
-              className={styles.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              {defaultContent.title}
-            </motion.h1>
-            
-            <motion.p 
-              className={styles.subtitle}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              {defaultContent.subtitle}
-            </motion.p>
-            
+            <div className={styles.titleContainer}>
+              <motion.h1
+                className={styles.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                {defaultContent.title}
+              </motion.h1>
+
+              <motion.p
+                className={styles.subtitle}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                {defaultContent.subtitle}
+              </motion.p>
+            </div>
+
             <div className={styles.buttonContainer}>
-              <motion.div 
+              <motion.div
                 className={styles.buttonWrapper}
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -51,7 +53,7 @@ export default function Hero() {
               >
                 <div className={styles.edgeCorner} style={{ top: 0, right: 0 }}>
                   <Image
-                    src="/assets/edge2.png"
+                    src="/images/edge2.png"
                     alt="Edge Corner Top Right"
                     width={7}
                     height={7}
@@ -59,7 +61,7 @@ export default function Hero() {
                 </div>
                 <div className={styles.edgeCorner} style={{ bottom: 0, left: 0 }}>
                   <Image
-                    src="/assets/edge3.png"
+                    src="/images/edge3.png"
                     alt="Edge Corner Bottom Left"
                     width={7}
                     height={7}
@@ -76,7 +78,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.8 }}
               >
                 <Image
-                  src="/assets/line.png"
+                  src="/images/line.png"
                   alt="Decorative Line"
                   width={100}
                   height={58}

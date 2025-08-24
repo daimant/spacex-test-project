@@ -66,7 +66,7 @@ export default function Navigation() {
           >
             <div className={styles.edgeCorner} style={{ top: 0, left: 0 }}>
               <Image
-                src="/assets/edge1.png"
+                src="/images/edge1.png"
                 alt="Edge Corner 1"
                 width={7}
                 height={7}
@@ -74,7 +74,7 @@ export default function Navigation() {
             </div>
             <div className={styles.edgeCorner} style={{ top: 0, right: 0 }}>
               <Image
-                src="/assets/edge2.png"
+                src="/images/edge2.png"
                 alt="Edge Corner 2"
                 width={7}
                 height={7}
@@ -82,7 +82,7 @@ export default function Navigation() {
             </div>
             <div className={styles.edgeCorner} style={{ bottom: 0, left: 0 }}>
               <Image
-                src="/assets/edge3.png"
+                src="/images/edge3.png"
                 alt="Edge Corner 3"
                 width={7}
                 height={7}
@@ -90,7 +90,7 @@ export default function Navigation() {
             </div>
             <div className={styles.edgeCorner} style={{ bottom: 0, right: 0 }}>
               <Image
-                src="/assets/edge4.png"
+                src="/images/edge4.png"
                 alt="Edge Corner 4"
                 width={7}
                 height={7}
@@ -98,7 +98,7 @@ export default function Navigation() {
             </div>
             <Link href="/">
               <Image
-                src="/assets/logo.png"
+                src="/images/logo.png"
                 alt="SpaceX Logo"
                 width={274}
                 height={34}

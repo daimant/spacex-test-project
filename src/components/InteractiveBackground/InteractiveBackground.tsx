@@ -76,7 +76,7 @@ export default function InteractiveBackground() {
     <div className={styles.background}>
       <div className={styles.backgroundImage}>
         <Image
-          src="/assets/backgroung.png"
+          src="/images/backgroung.png"
           alt="Space Background"
           fill
           style={{ objectFit: 'cover' }}
@@ -87,7 +87,7 @@ export default function InteractiveBackground() {
         ref={canvasRef}
         className={styles.particlesCanvas}
       />
-      <div className={styles.overlay} />
+      <div className={styles.overlay}/>
     </div>
   )
 }
