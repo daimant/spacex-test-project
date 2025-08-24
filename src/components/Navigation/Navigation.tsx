@@ -1,20 +1,46 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import styles from './Navigation.module.scss'
 import { MenuItem, NavigationState } from './types'
+import { useClickOutside, usePreventScroll } from '@/hooks'
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState<NavigationState['isMenuOpen']>(false)
   const pathname = usePathname()
+  
+  const mobileMenuRef = useRef<HTMLDivElement | null>(null)
+  const mobileMenuButtonRef = useRef<HTMLButtonElement | null>(null)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
   }
+
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
+
+  // Используем хук useClickOutside для закрытия мобильного меню
+  useClickOutside(mobileMenuRef, closeMenu, [mobileMenuButtonRef])
+
+  // Обработка нажатия клавиши Escape
+  useEffect(() => {
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && isMenuOpen) {
+        closeMenu()
+      }
+    }
+
+    document.addEventListener('keydown', handleEscapeKey)
+    return () => document.removeEventListener('keydown', handleEscapeKey)
+  }, [isMenuOpen])
+
+  // Блокируем прокрутку при открытом мобильном меню
+  usePreventScroll(isMenuOpen)
 
   const menuItems: MenuItem[] = [
     { name: 'Главная', href: '/', key: 'home' },
@@ -101,6 +127,7 @@ export default function Navigation() {
           </div>
 
           <motion.button
+            ref={mobileMenuButtonRef}
             className={styles.mobileMenuButton}
             onClick={toggleMenu}
             initial={{ opacity: 0 }}
@@ -116,34 +143,37 @@ export default function Navigation() {
           </motion.button>
         </div>
 
-        <AnimatePresence>
-          {isMenuOpen && (
+        {isMenuOpen && (
+          <AnimatePresence>
             <motion.div
+              ref={mobileMenuRef}
               className={styles.mobileMenu}
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3 }}
             >
-              {menuItems.map((item, index) => (
-                <motion.div
-                  key={item.key}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
-                  <Link
-                    href={item.href}
-                    className={`${styles.mobileMenuItem} ${item.isActive ? styles.active : ''}`}
-                    onClick={() => setIsMenuOpen(false)}
+              <>
+                {menuItems.map((item, index) => (
+                  <motion.div
+                    key={item.key}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: index * 0.1 }}
                   >
-                    {item.name}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      href={item.href}
+                      className={`${styles.mobileMenuItem} ${item.isActive ? styles.active : ''}`}
+                      onClick={closeMenu}
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                ))}
+              </>
             </motion.div>
-          )}
-        </AnimatePresence>
+          </AnimatePresence>
+        )}
       </div>
     </nav>
   )
