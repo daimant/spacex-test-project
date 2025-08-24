@@ -78,7 +78,7 @@ export default function Hero() {
                 <Image
                   src="/assets/line.png"
                   alt="Decorative Line"
-                  width={406}
+                  width={100}
                   height={58}
                 />
               </motion.div>

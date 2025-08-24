@@ -18,6 +18,7 @@ export default function InfoPanels() {
       text: 'календари за',
       subtext: 'в подарок',
       value: '2001',
+      valueSmall: 'г.',
       delay: 0.4
     },
     {
@@ -46,10 +47,12 @@ export default function InfoPanels() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: panel.delay }}
-            whileHover={{ scale: 1.05 }}
           >
             <span className={styles.label}>{panel.text}</span>
-            <strong className={styles.value}>{panel.value}</strong>
+            <span className={styles.valueContainer}>
+              <strong className={styles.value}>{panel.value}</strong>
+              <strong className={styles.valueSmall}>{panel.valueSmall}</strong>
+            </span>
             <small className={styles.label}>{panel.subtext}</small>
           </motion.div>
         ))}

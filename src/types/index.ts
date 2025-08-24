@@ -2,12 +2,9 @@
 export * from './common'
 
 // Component types
-export * from '../components/SpaceAnimation/types'
 export * from '../components/InteractiveBackground/types'
-export * from '../components/InteractiveElements/types'
 export * from '../components/Navigation/types'
 export * from '../components/InfoPanels/types'
-export * from '../components/Footer/types'
 export * from '../components/Hero/types'
 
 // Page types

@@ -3,5 +3,6 @@ export interface InfoPanel {
   text: string
   subtext: string
   value: string
+  valueSmall?: string
   delay: number
 }

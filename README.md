@@ -19,8 +19,7 @@ src/
 │   └── page.tsx           # Главная страница
 ├── components/             # React компоненты
 │   ├── Hero/              # Главный блок с контентом
-│   ├── InteractiveBackground/ # Интерактивный фон
-│   └── SpaceAnimation/    # Анимация космических объектов
+│   └── InteractiveBackground/ # Интерактивный фон
 └── styles/                 # SASS стили
     └── globals.scss       # Глобальные стили
 ```

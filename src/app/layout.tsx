@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import Navigation from '@/components/Navigation/Navigation'
-import '@/styles/globals.scss'
-
-const inter = Inter({ subsets: ['latin'] })
+import '@/assets/styles/globals.scss'
 
 export const metadata: Metadata = {
   title: 'SpaceX Test Project',
   description: 'SpaceX landing page with interactive elements',
+  icons: {
+    icon: '/favicon.svg',
+  },
 }
 
 export default function RootLayout({
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <Navigation />
         {children}
       </body>

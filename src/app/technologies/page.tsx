@@ -11,28 +11,28 @@ export default function Technologies() {
       name: 'Falcon 9',
       description: 'Первая в мире ракета-носитель многоразового использования',
       features: ['Многоразовая первая ступень', 'Двигатели Merlin', 'Грузоподъемность до 22.8 тонн'],
-      image: '/assets/falcon9.jpg'
+      image: '/images/falcon9.jpg'
     },
     {
       id: 'starship',
       name: 'Starship',
       description: 'Самый мощный космический корабль в истории',
       features: ['Полностью многоразовый', 'Двигатели Raptor', 'Грузоподъемность до 100 тонн'],
-      image: '/assets/starship.jpg'
+      image: '/images/starship.jpg'
     },
     {
       id: 'dragon',
       name: 'Dragon',
       description: 'Космический корабль для доставки грузов и экипажа',
       features: ['Автоматическая стыковка', 'Возвращение на Землю', 'Безопасность экипажа'],
-      image: '/assets/dragon.jpg'
+      image: '/images/dragon.jpg'
     },
     {
       id: 'starlink',
       name: 'Starlink',
       description: 'Спутниковая система для глобального интернета',
       features: ['Низкая орбита', 'Высокая скорость', 'Глобальное покрытие'],
-      image: '/assets/starlink.jpg'
+      image: '/images/starlink.jpg'
     }
   ]
 

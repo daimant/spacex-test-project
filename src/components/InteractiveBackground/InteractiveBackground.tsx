@@ -65,7 +65,9 @@ export default function InteractiveBackground() {
     return () => {
       window.removeEventListener('resize', resizeCanvas)
       if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current)
+        if (typeof animationRef.current === "number") {
+          cancelAnimationFrame(animationRef.current)
+        }
       }
     }
   }, [])
