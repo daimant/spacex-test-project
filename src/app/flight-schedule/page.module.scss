@@ -136,7 +136,8 @@
         flex-direction: column;
       }
       
-      button {
+      button,
+      a {
         padding: 12px 24px;
         border: none;
         border-radius: 8px;
@@ -146,6 +147,8 @@
         transition: all 0.3s ease;
         text-transform: uppercase;
         letter-spacing: 1px;
+        text-decoration: none;
+        display: inline-block;
         
         &.watchButton {
           background: #ff4500;

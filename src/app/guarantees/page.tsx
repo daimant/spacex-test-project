@@ -100,9 +100,14 @@ export default function Guarantees() {
               </ul>
               
               <div className={styles.guaranteeFooter}>
-                <button className={styles.learnMoreButton}>
+                <a 
+                  href="https://www.spacex.com/about" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.learnMoreButton}
+                >
                   Узнать больше
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}

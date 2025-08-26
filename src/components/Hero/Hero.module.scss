@@ -98,6 +98,8 @@
     position: relative;
     z-index: 1;
     white-space: nowrap;
+    text-decoration: none;
+    display: inline-block;
 
     &:hover {
       box-shadow: 0 0 20px rgba(1, 88, 154, 0.5);

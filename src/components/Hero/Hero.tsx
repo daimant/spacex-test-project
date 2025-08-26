@@ -67,9 +67,14 @@ export default function Hero() {
                     height={7}
                   />
                 </div>
-                <button className={styles.ctaButton}>
+                <a 
+                  href="https://www.spacex.com/careers" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.ctaButton}
+                >
                   {defaultContent.buttonText}
-                </button>
+                </a>
               </motion.div>
               <motion.div
                 className={styles.lineImage}

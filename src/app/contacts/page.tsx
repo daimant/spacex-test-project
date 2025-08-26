@@ -93,7 +93,21 @@ export default function Contacts() {
                   <div className={styles.infoIcon}>{info.icon}</div>
                   <div className={styles.infoContent}>
                     <h3>{info.title}</h3>
-                    <p>{info.content}</p>
+                    {info.title === 'Email' ? (
+                      <a href={`mailto:${info.content}`} className={styles.infoLink}>
+                        {info.content}
+                      </a>
+                    ) : info.title === 'Телефон' ? (
+                      <a href={`tel:${info.content.replace(/\s/g, '')}`} className={styles.infoLink}>
+                        {info.content}
+                      </a>
+                    ) : info.title === 'Веб-сайт' ? (
+                      <a href={`https://${info.content}`} target="_blank" rel="noopener noreferrer" className={styles.infoLink}>
+                        {info.content}
+                      </a>
+                    ) : (
+                      <p>{info.content}</p>
+                    )}
                   </div>
                 </motion.div>
               ))}

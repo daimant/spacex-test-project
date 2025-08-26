@@ -187,9 +187,14 @@ export default function About() {
               Наша цель - сделать человечество многопланетным видом, создав 
               самодостаточные города на Марсе и других небесных телах.
             </p>
-            <button className={styles.joinButton}>
+            <a 
+              href="https://www.spacex.com/careers" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className={styles.joinButton}
+            >
               Присоединиться к команде
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>

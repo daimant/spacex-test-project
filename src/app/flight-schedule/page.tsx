@@ -120,12 +120,22 @@ export default function FlightSchedule() {
               </div>
               
               <div className={styles.missionActions}>
-                <button className={styles.watchButton}>
+                <a 
+                  href="https://www.youtube.com/spacex" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.watchButton}
+                >
                   Смотреть запуск
-                </button>
-                <button className={styles.infoButton}>
+                </a>
+                <a 
+                  href="https://en.wikipedia.org/wiki/SpaceX" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className={styles.infoButton}
+                >
                   Подробнее
-                </button>
+                </a>
               </div>
             </motion.div>
           ))}
