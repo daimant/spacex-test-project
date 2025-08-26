@@ -61,8 +61,8 @@
   }
 
   .buttonContainer {
-    width: 50%;
     @media (min-width: 768px) {
+      width: 50%;
       gap: 20px;
       display: flex;
       position: relative;
@@ -97,6 +97,7 @@
     letter-spacing: 1px;
     position: relative;
     z-index: 1;
+    white-space: nowrap;
 
     &:hover {
       box-shadow: 0 0 20px rgba(1, 88, 154, 0.5);
